@@ -1,5 +1,10 @@
 #!/bin/bash
 
-ln -s ~/Dropbox/macSetting/bash_profile ~/.bash_profile
-ln -s ~/Dropbox/macSetting/gitconfig ~/.gitconfig
-ln -s ~/Dropbox/macSetting/.irbrc ~/.irbrc
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.vim ~/.vim
+ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.irbrc ~/.irbrc
+
+git submodule init
+git submodule update
