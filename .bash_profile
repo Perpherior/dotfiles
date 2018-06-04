@@ -33,25 +33,32 @@ function keys() {
 alias keys=keys
 
 # Alias
+alias rdm='rake db:migrate db:test:prepare'
+alias rdms='rake db:migrate:status'
+alias rspec='bundle exec rspec'
+alias rdr='rake db:rollback'
+
+alias oo='open .'
+alias ..='cd ..'
+alias s='bundle exec rails s'
+
+# psql
+alias psql\:start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias psql\:stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias psql\:restart="brew services restart postgresql"
 
 alias gc=git_commit_fancy
 alias gph='git push'
 alias gp='git pull'
+alias gphm='git push heroku master'
+alias dokku='ssh root@perpherior.com'
+alias rspec='bundle exec rspec'
 
-alias e='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias os='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl .'
 alias bnc='(bundle check || bundle install --path vendor/bundle)'
 alias be='bundle exec'
-
-alias rrst='touch tmp/restart.txt'
-alias prst='touch ~/.pow/restart.txt'
-
-# system monitoring
-alias topcpu='ps aux | sort -n &2 | tail -10'  # top 10 cpu processes
-alias topmem='ps aux | sort -n &3 | tail -10'  # top 10 memory processes
-
-# disk usage
-alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
-
-# heroku changes
-alias hc='git --no-pager log --merges --pretty=format:"%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%C(yellow)%d%Creset" --date=short production..master'
-alias hdm='git --no-pager diff production master -- db/migrate'
+alias fs='foreman start -f'
+alias dc='docker-compose run web'
+alias up='docker-compose up'
+alias dcb='docker-compose build'
+alias i='irb -Ilib -rgifter_hub'
