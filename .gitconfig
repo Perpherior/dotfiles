@@ -1,8 +1,9 @@
 [user]
 	name = Will Zhang
 	email = young.zhana@gmail.com
+	signingkey = 1701E5FC5318AA35
 [core]
-	excludesfile = /Users/fanminjian/.gitignore_global
+	excludesfile = /Users/Will/.gitignore_global
 	quotepath = false
 [color]
 	ui = auto
